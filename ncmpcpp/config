@@ -1,0 +1,14 @@
+mpd_music_dir = "music/"
+
+song_columns_list_format = "(8)[blue]{n}(10)[cyan]{l}(20)[magenta]{a}(30)[white]{t}(38)[blue]{b}"
+playlist_display_mode = "columns"
+
+autocenter_mode = "yes"
+display_screens_numbers_on_start = "no"
+display_bitrate = "yes"
+display_volume_level = "no"
+header_visibility = "yes"
+playlist_separate_albums = "yes"
+playlist_shorten_total_times = "yes"
+progressbar_look = "─╼·"
+statusbar_visibility = "yes"
