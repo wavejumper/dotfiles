@@ -15,6 +15,7 @@ export EDITOR=vim
 #bind
 bindkey "^[[7~" beginning-of-line
 bindkey "^[[8~" end-of-line
+bindkey -v
 
 #alias
 alias vim='nocorrect vim'
@@ -24,4 +25,3 @@ alias sudo='nocorrect sudo'
 alias ranger.desktop='urxvt -e ranger'
 alias mount_pi="mount -t nfs -o nolock 192.168.0.16:/drive ~/pi"
 
-bindkey -v
