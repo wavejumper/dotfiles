@@ -11,14 +11,14 @@ auto_update       "yes"
 auto_update_depth "4"
 
 audio_output {
-	type		"alsa"
-	name		"USB DAC"
+	type	"alsa"
+	name	"USB DAC"
 	device	"hw:1,0"	
 }
 
 audio_output {
-	type		"alsa"
-	name		"USB DAC2"
+	type	"alsa"
+	name	"USB DAC2"
 	device	"hw:0,0"	
 }
 
