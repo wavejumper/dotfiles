@@ -62,3 +62,6 @@ map ,r :call RangerChooser()<CR>
 set pastetoggle=<F2>
 map ,t :CommandTBuffer<CR>
 set backspace=indent,eol,start
+
+"tab = space
+set expandtab
