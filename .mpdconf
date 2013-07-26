@@ -1,11 +1,14 @@
-music_directory 		    "/home/tom/music"
-playlist_directory		  "/home/tom/.mpd/playlists"
-db_file				          "/home/tom/.mpd/database"
-log_file			          "/home/tom/.mpd/log"
-pid_file			          "/home/tom/.mpd/pid"
-state_file			        "/home/tom/.mpd/state"
+music_directory	   "/home/tom/music"
+playlist_directory "/home/tom/.mpd/playlists"
+db_file	           "/home/tom/.mpd/database"
+log_file	   "/home/tom/.mpd/log"
+pid_file	   "/home/tom/.mpd/pid"
+state_file         "/home/tom/.mpd/state"
 
-bind_to_address		      "localhost"
+bind_to_address "localhost"
+
+auto_update       "yes"
+auto_update_depth "4"
 
 audio_output {
 	type		"alsa"
@@ -19,13 +22,13 @@ audio_output {
 	device	"hw:0,0"	
 }
 
-mixer_type			        "disabled"
+mixer_type "disabled"
 
-filesystem_charset		  "UTF-8"
-id3v1_encoding			    "UTF-8"
+filesystem_charset "UTF-8"
+id3v1_encoding     "UTF-8"
 
 follow_outside_symlinks "yes"
 follow_inside_symlinks  "yes"
 
-zeroconf_enabled        "yes"
-zeroconf_name           "Crowley's MPD"
+zeroconf_enabled "yes"
+zeroconf_name    "Tom's MPD"
