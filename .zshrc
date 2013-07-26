@@ -22,5 +22,6 @@ alias ssh='nocorrect ssh'
 alias ncmpcpp='nocorrect ncmpcpp'
 alias sudo='nocorrect sudo'
 alias ranger.desktop='urxvt -e ranger'
+alias mount_pi="mount -t nfs -o nolock 192.168.0.16:/drive ~/pi"
 
 bindkey -v
