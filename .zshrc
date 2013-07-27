@@ -1,7 +1,7 @@
 #oh my zsh :0
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="lambda"
-plugins=(git git-flow github redis-cli rsync tmux coffee vi-mode node npm archlinux ruby)
+plugins=(git git-flow github redis-cli rsync tmux coffee vi-mode node npm archlinux ruby lein)
 
 #source
 source $ZSH/oh-my-zsh.sh
