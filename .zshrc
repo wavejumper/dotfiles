@@ -13,9 +13,12 @@ export LANG=en_US.utf-8
 export EDITOR=vim
 
 #bind
-bindkey "^[[7~" beginning-of-line
-bindkey "^[[8~" end-of-line
+#bindkey "^[[7~" beginning-of-line
+#bindkey "^[[8~" end-of-line
 bindkey -v
+bindkey ^R history-incremental-search-backward
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 
 #alias
 alias vim='nocorrect vim'
