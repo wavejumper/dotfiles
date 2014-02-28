@@ -1,39 +1,44 @@
-! Xft colours ----------------------------
-urxvt*background:  #3f3f3f
-urxvt*foreground:  #dcdccc
-URxvt*color0:      #3f3f3f
-URxvt*color1:      #705050
-URxvt*color2:      #60b48a
-URxvt*color3:      #dfaf8f
-URxvt*color4:      #506070
-URxvt*color5:      #dc8cc3
-URxvt*color6:      #8cd0d3
-URxvt*color7:      #DCDCCC
-URxvt*color8:      #709080
-URxvt*color9:      #cc9393
-URxvt*color10:     #7f9f7f
-URxvt*color11:     #f0dfaf
-URxvt*color12:     #94bff3
-URxvt*color13:     #ec93d3
-URxvt*color14:     #93e0e3
-URxvt*color15:     #ffffff
+! Font etc ------------------------------------
+URxvt.font: xft:Ubuntu Mono derivative Powerline:size=11
+Xft.dpi: 220
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.antialias: true
 
-! Xft settings ----------------------------
-Xft.dpi:           96
-Xft.antialias:     true
-Xft.rgba:          rgb
-Xft.hinting:       true
-Xft.hintstyle:     hintslight
+!URxvt.depth: 32
+! URxvt --------------------------------------
 
-! URxvt settings --------------------------
-URxvt*cursorBlink: true
-!URxvt*font:       xft:Inconsolata for Powerline:size=18:antialias=true
-URxvt*font:        xft:inconsolata:size=18:antialias=true
-URxvt*scrollBar:   false
-URxvt*saveLines:   5000
-URxvt*termName:    rxvt
+URxvt.saveLines:32767
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,clipboard,matcher
+URxvt.matcher.button:  1
+URxvt.matcher.button:  /usr/bin/firefox
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755:        False
 
-! URxvt plugins --------------------------
-URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:     /usr/bin/chromium
-URxvt.matcher.button:   1
+! Colours (Solarized)-------------------------
+*background:            #002b36
+*foreground:            #657b83
+*fading:                40
+*fadeColor:             #002b36
+*cursorColor:           #93a1a1
+*pointerColorBackground:#586e75
+*pointerColorForeground:#93a1a1
+
+*color0:                #073642
+*color8:                #002b36
+*color1:                #dc322f
+*color9:                #cb4b16
+*color2:                #859900
+*color10:               #586e75
+*color3:                #b58900
+*color11:               #657b83
+*color4:                #268bd2
+*color12:               #839496
+*color5:                #d33682
+*color13:               #6c71c4
+*color6:                #2aa198
+*color14:               #93a1a1
+*color7:                #eee8d5
+*color15:               #fdf6e3
