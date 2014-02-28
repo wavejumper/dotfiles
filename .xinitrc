@@ -1,8 +1,7 @@
 mpd ~/.mpdconf &
-mpdscribble &
-xautolock -time 10 -locker slock &
-feh --bg-scale ~/images/Mars_2560x1440.jpg & 
+xautolock -time 5 -locker slock &
+feh --bg-fixed ~/Images/2560x1440.png & 
 xrdb -merge ~/.Xresources &
 xmodmap ~/.speedswapper &
-redshift -l 33.7:144.9 -t 5700:3600 -g 0.8 -m RANDR -v &
+redshift -l 33.7:144.9 -t 5700:3600 &
 exec awesome
