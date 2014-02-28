@@ -6,7 +6,6 @@ filetype indent on
 set nocompatible
 
 "powerline
-set rtp+=~/.local/lib/python3.3/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
 "remembering shit
@@ -41,7 +40,8 @@ set gcr=a:blinkon0
 syntax on
 set number
 set t_Co=256
-colors zenburn
+set background=dark
+colors solarized
 
 "backup
 set backupdir-=.
@@ -57,11 +57,9 @@ fun! RangerChooser()
     redraw!
 endfun
 
-"mappings
+"keys
 map ,r :call RangerChooser()<CR>
-set pastetoggle=<F2>
 map ,t :CommandTBuffer<CR>
 set backspace=indent,eol,start
-
-"tab = space
+set pastetoggle=<F2>
 set expandtab
