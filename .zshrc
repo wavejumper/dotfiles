@@ -21,3 +21,4 @@ alias sudo='nocorrect sudo'
 alias ranger.desktop='urxvt -e ranger'
 
 xrdb ~/.Xresources
+eval $(keychain --eval --agents ssh -Q --quiet github)
