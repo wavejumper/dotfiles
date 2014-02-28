@@ -1,25 +1,25 @@
 music_directory	   "/home/tom/music"
 playlist_directory "/home/tom/.mpd/playlists"
 db_file	           "/home/tom/.mpd/database"
-log_file	   "/home/tom/.mpd/log"
-pid_file	   "/home/tom/.mpd/pid"
+log_file	         "/home/tom/.mpd/log"
+pid_file	         "/home/tom/.mpd/pid"
 state_file         "/home/tom/.mpd/state"
 
 bind_to_address "localhost"
 
 auto_update       "yes"
-auto_update_depth "4"
+auto_update_depth "2"
 
 audio_output {
-	type	"alsa"
-	name	"USB DAC"
-	device	"hw:1,0"	
+	type	 "alsa"
+	name	 "DAC"
+	device "hw:1,0"	
 }
 
 audio_output {
-	type	"alsa"
-	name	"USB DAC2"
-	device	"hw:0,0"	
+	type	 "alsa"
+	name	 "Headphones"
+	device "hw:0,0"	
 }
 
 mixer_type "disabled"
