@@ -5,8 +5,7 @@ filetype plugin on
 filetype indent on
 set nocompatible
 
-"powerline
-let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
 
 "remembering shit
 set history=1000

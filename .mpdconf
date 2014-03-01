@@ -1,4 +1,4 @@
-music_directory	   "/home/tom/music"
+music_directory	   "/home/tom/Music"
 playlist_directory "/home/tom/.mpd/playlists"
 db_file	           "/home/tom/.mpd/database"
 log_file	         "/home/tom/.mpd/log"

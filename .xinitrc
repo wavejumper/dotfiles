@@ -4,4 +4,5 @@ feh --bg-fixed ~/Images/2560x1440.png &
 xrdb -merge ~/.Xresources &
 xmodmap ~/.speedswapper &
 redshift -l 33.7:144.9 -t 5700:3600 &
+eval $(eval gpg-agent --daemon)
 exec awesome
