@@ -19,6 +19,9 @@ alias ssh='nocorrect ssh'
 alias ncmpcpp='nocorrect ncmpcpp'
 alias sudo='nocorrect sudo'
 alias ranger.desktop='urxvt -e ranger'
+alias android_mount='jmtpfs ~/mtp'
+alias android_umount='fusermount -u ~/mtp'
+alias startx='ssh-agent startx'
+alias add_keys='ssh-add ~/.ssh/github ; ssh-add ~/.ssh/bitbucket'
 
 xrdb ~/.Xresources
-eval $(keychain --eval --agents ssh -Q --quiet github)
