@@ -1,0 +1,33 @@
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = /home/tom/.vim/bundle/vim-airline
+[submodule "vim/bundle/vim-classpath"]
+	path = vim/bundle/vim-classpath
+	url = /home/tom/.vim/bundle/vim-classpath
+[submodule "vim/bundle/vim-bundler"]
+	path = vim/bundle/vim-bundler
+	url = /home/tom/.vim/bundle/vim-bundler
+[submodule "vim/bundle/vim-clojure-static"]
+	path = vim/bundle/vim-clojure-static
+	url = /home/tom/.vim/bundle/vim-clojure-static
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = /home/tom/.vim/bundle/vim-coffee-script
+[submodule "vim/bundle/vim-fireplace"]
+	path = vim/bundle/vim-fireplace
+	url = /home/tom/.vim/bundle/vim-fireplace
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = /home/tom/.vim/bundle/vim-jade
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = /home/tom/.vim/bundle/vim-javascript-syntax
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = /home/tom/.vim/bundle/vim-less
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = /home/tom/.vim/bundle/vim-markdown
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = /home/tom/.vim/bundle/vim-rails
