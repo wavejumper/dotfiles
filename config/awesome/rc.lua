@@ -237,6 +237,10 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+      awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+      awful.util.spawn("xbacklight -inc 15") end),
     awful.key({ }, "XF86AudioRaiseVolume", function ()
         awful.util.spawn("amixer set Master 3%+") end),
     awful.key({ }, "XF86AudioLowerVolume", function ()
