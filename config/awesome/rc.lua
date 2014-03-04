@@ -10,8 +10,10 @@ local beautiful = require("beautiful")
 vicious = require("vicious")
 -- Notification library
 local naughty = require("naughty")
+local bashets = require("bashets")
 local menubar = require("menubar")
 
+bashets.set_script_path("~/scripts/") 
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -115,13 +117,13 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 mytextclock = awful.widget.textclock()
 
 battwidget = wibox.widget.textbox()
-vicious.register(battwidget, vicious.widgets.bat, '$1$2', 61, 'BAT0')
+vicious.register(battwidget, vicious.widgets.bat, '♥$1$2', 61, 'BAT0')
 
 spacer = wibox.widget.textbox()
 spacer:set_markup(" ")
 
 soundwidget = wibox.widget.textbox()
-vicious.register(soundwidget, vicious.widgets.volume, "$1%", 2, "Master")
+vicious.register(soundwidget, vicious.widgets.volume, "♫ $1%", 2, "Master")
 
 mpdwidget = wibox.widget.textbox()
 vicious.register(mpdwidget, vicious.widgets.mpd,
@@ -132,6 +134,10 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
             return args["{Artist}"]..' - '.. args["{Title}"]
         end
     end, 10)
+
+emailwidget = wibox.widget.textbox()
+bashets.register("email.sh", {widget = emailwidget, format = "✉ $1"})
+bashets.start()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -208,10 +214,11 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(soundwidget)
+    right_layout:add(emailwidget)
     right_layout:add(spacer)
     right_layout:add(mpdwidget)
+    right_layout:add(spacer)
+    right_layout:add(soundwidget)
     right_layout:add(spacer)
     right_layout:add(battwidget)
     right_layout:add(mytextclock)
