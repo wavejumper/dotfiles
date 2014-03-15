@@ -59,6 +59,10 @@ endfun
 "keys
 map ,r :call RangerChooser()<CR>
 map ,t :CommandTBuffer<CR>
+map <C-n> :bn <Enter>
+map <C-b> :bp <Enter>
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 set backspace=indent,eol,start
 set pastetoggle=<F2>
 set expandtab
