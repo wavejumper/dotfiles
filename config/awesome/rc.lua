@@ -136,7 +136,7 @@ vicious.register(mpdwidget, vicious.widgets.mpd,
     end, 10)
 
 emailwidget = wibox.widget.textbox()
-bashets.register("email.sh", {widget = emailwidget, format = "✉ $1"})
+bashets.register("email.sh", {widget = emailwidget, format = "✉ $1", update_time = 240})
 bashets.start()
 
 -- Create a wibox for each screen and add it
@@ -244,6 +244,10 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ }, "XF86KbdBrightnessDown", function ()
+      awful.util.spawn("kbdlight down") end),
+    awful.key({ }, "XF86KbdBrightnessUp", function ()
+      awful.util.spawn("kbdlight up") end),
     awful.key({ }, "XF86MonBrightnessDown", function ()
       awful.util.spawn("xbacklight -dec 15") end),
     awful.key({ }, "XF86MonBrightnessUp", function ()
