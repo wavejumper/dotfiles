@@ -14,6 +14,7 @@ bindkey ^R history-incremental-search-backward
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
+alias mpd='mpd ~/.mpd.conf & mpdscribble'
 alias vim='nocorrect vim'
 alias ssh='nocorrect ssh'
 alias ncmpcpp='nocorrect ncmpcpp'
