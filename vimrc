@@ -66,3 +66,13 @@ nnoremap <F4> :NumbersOnOff<CR>
 set backspace=indent,eol,start
 set pastetoggle=<F2>
 set expandtab
+
+"Titlebar
+let &titlestring = "vim ".expand("%:p")
+if &term == "screen"
+  set t_ts=^[k
+  set t_fs=^[\
+endif
+if &term == "screen" || &term == "xterm"
+  set title
+endif
