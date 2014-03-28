@@ -1,8 +1,19 @@
-mpd ~/.mpdconf &
-xautolock -time 5 -locker slock &
-feh --bg-fixed ~/Images/2560x1440.png & 
-xrdb -merge ~/.Xresources &
-xmodmap ~/.speedswapper &
-redshift -l 33.7:144.9 -t 5700:3600 &
-eval $(eval gpg-agent --daemon)
-exec awesome
+xrdb ~/.Xresources &
+xmodmap ~/.speed &
+redshift -l 33.7:144.9 &
+
+case "$2" in
+  awesome)
+    feh --bg-fill ~/Images/2560x1440.png &
+    if [ -n "$GNOME_KEYRING_PID" ]; then
+      eval $(gnome-keyring-daemon --start --components=ssh)
+      export SSH_AUTH_SOCK
+    fi
+    pulseaudio --start &
+    xautolock -time 10 -locker slock &
+    exec awesome
+    ;;
+  gnome)
+    exec gnome-session
+    ;;
+esac
