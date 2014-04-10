@@ -1,7 +1,7 @@
 xrdb ~/.Xresources &
 xmodmap ~/.speed &
 redshift -l 33.7:144.9 &
-stty -ixon
+stty -ixon &
 
 case "$2" in
   awesome)
