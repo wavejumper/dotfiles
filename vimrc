@@ -11,6 +11,8 @@ let g:airline#extensions#tabline#enabled = 1
 set history=1000
 set viminfo='100,f1
 
+set re=1
+
 "searching
 set incsearch 
 set hlsearch 
