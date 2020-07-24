@@ -11,11 +11,6 @@
    dotspacemacs-configuration-layers
    '(
      typescript
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      neotree
      docker
      evil-cleverparens
@@ -37,7 +32,11 @@
                       syntax-checking-use-original-bitmaps t)
      auto-completion
      )
-   dotspacemacs-additional-packages '(flycheck-clj-kondo all-the-icons modus-operandi-theme modus-vivendi-theme)
+   dotspacemacs-additional-packages '(flycheck-clj-kondo
+                                      all-the-icons
+                                      modus-operandi-theme
+                                      modus-vivendi-theme
+                                      idle-highlight-mode)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only))
@@ -58,7 +57,7 @@
    dotspacemacs-themes '(modus-operandi)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Hack"
-                               :size 12
+                               :size 12.5
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -109,37 +108,45 @@
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
-   dotspacemacs-whitespace-cleanup 'all
-   ))
+   dotspacemacs-whitespace-cleanup 'all))
 
-(defun dotspacemacs/user-init ()
-  )
+(defun dotspacemacs/user-init ())
 
-(defun dotspacemacs/user-config ()
-  (use-package modus-operandi-theme :ensure)
+(defun dotspacemacs/lisp-hooks ()
+  (enable-paredit-mode)
+  (evil-cleverparens-mode)
+  (idle-highlight-mode t))
 
-  (setq neo-theme 'icons)
-  (setq neo-vc-integration '(face))
+(defun dotspacemacs/clojure-mode-hooks ()
+  (flycheck-mode 1)
+  (boonmee-init)
+  (dotspacemacs/lisp-hooks))
 
-  (global-company-mode)
-  (spacemacs/toggle-evil-cleverparens-on)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+(defun dotspacemacs/clojure-config ()
+
   (use-package clojure-mode
     :ensure t
     :config
     (require 'flycheck-clj-kondo))
 
-  (setq cider-jdk-src-paths '("/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/lib/src.zip"))
-
-  (setq cider-repl-pop-to-buffer-on-connect 'display-only)
-
   (load-file "/Users/thomascrowley/Code/clojure/boonmee/clients/emacs/boonmee.el")
-
-  (add-hook 'clojure-mode-hook (lambda() (flycheck-mode 1) (boonmee-init)))
-
+  (setq cider-jdk-src-paths '("/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/lib/src.zip"))
+  (setq cider-repl-pop-to-buffer-on-connect 'display-only)
   (setq cider-repl-display-help-banner nil)
+  (add-hook 'clojure-mode-hook 'dotspacemacs/clojure-mode-hooks))
+
+(defun dotspacemacs/emacs-lisp-config ()
+  (add-hook 'emacs-lisp-mode-hook 'dotspacemacs/lisp-hooks))
+
+(defun dotspacemacs/user-config ()
+  (use-package modus-operandi-theme :ensure)
+  (setq neo-theme 'icons)
+  (setq neo-vc-integration '(face))
+  (global-company-mode)
+
+  (spacemacs/toggle-evil-cleverparens-on)
+  (dotspacemacs/clojure-config)
+  (dotspacemacs/emacs-lisp-config)
 
   (eval-after-load 'paredit
     '(progn
@@ -151,6 +158,4 @@
   (defun kill-other-buffers ()
     "Kill all other buffers."
     (interactive)
-    (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
-
-  )
+    (mapc 'kill-buffer (delq (current-buffer) (buffer-list)))))
